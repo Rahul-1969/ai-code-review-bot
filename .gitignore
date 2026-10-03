@@ -1,0 +1,54 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# IDE/editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary/generated
+tmp/
+temp/
+*.tmp
+
+# Playwright/test artifacts
+playwright-report/
+test-results/
+
+# Project specific
+tree.txt
+1.0.0
+patch.py
+repomix-output.xml

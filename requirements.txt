@@ -1,0 +1,81 @@
+
+# FastAPI core
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+
+# Database
+sqlalchemy==2.0.30
+alembic==1.13.1
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# AI / LLM
+openai==1.30.1
+anthropic==0.28.0
+langchain==0.2.3
+langchain-openai==0.1.8
+tiktoken==0.7.0
+google-genai==1.2.0
+
+# HTTP client
+httpx==0.27.0
+aiohttp==3.9.5
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+
+# Environment & Config
+python-dotenv==1.0.1
+pydantic==2.7.2
+pydantic-settings==2.3.1
+
+# Task queue (background jobs)
+celery==5.4.0
+redis==5.0.5
+
+# GitHub integration
+PyGithub==2.3.0
+
+# Logging & Monitoring
+loguru==0.7.2
+
+# Testing
+pytest==8.2.2
+pytest-asyncio==0.23.7
+
+# Utilities
+python-slugify==8.0.4
+
+# ---------------------------------------------------------
+# STABILIZED NATIVE DEPENDENCIES (Windows + Python 3.10.11)
+# ---------------------------------------------------------
+# bcrypt < 4.0.0 is required because passlib 1.7.4 relies on bcrypt._bcrypt
+# which was removed in bcrypt 4.0.0.
+bcrypt==3.2.2
+
+# cffi is pinned to ensure the C extension for bcrypt 3.2.2 builds/loads properly
+# resolving "ModuleNotFoundError: No module named '_cffi_backend'"
+cffi==1.17.0
+
+# cryptography pinned to a stable pre-compiled wheel for Py3.10 on Windows
+# resolving "ImportError: DLL load failed while importing _rust"
+cryptography==42.0.8
+
+# Pillow pinned to a stable version with Windows wheels
+# resolving "cannot import name '_imaging' from 'PIL'"
+Pillow==10.3.0
+
+# reportlab is explicitly required by backend/reports/pdf_generator.py
+# but was missing from this logical requirements.txt
+reportlab==4.2.0
+
+# PyNaCl pinned to stable wheel, used by PyGithub
+PyNaCl==1.5.0
+
+# GitPython for cloning/reading repositories in background tasks
+GitPython==3.1.50
+
+# openpyxl for Excel report generation
+openpyxl==3.1.5
